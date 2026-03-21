@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import MagicBento, { BentoCardProps } from "./MagicBento";
 import { techIcons } from "./TechIcons";
+import GradientText from "./GradientText";
 
 type SkillCategory = {
   category: string;
@@ -82,7 +83,10 @@ export default function TechStack() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
           <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
-            Technologies & Tools
+            <GradientText colors={["#ff0000", "#850000"]} animationSpeed={10} showBorder={false}>
+                Tech Stack
+              
+            </GradientText>
           </h1>
           <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
             An overview of the technologies I've worked with throughout my journey.
