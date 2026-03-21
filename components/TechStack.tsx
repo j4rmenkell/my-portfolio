@@ -1,40 +1,113 @@
+"use client";
+
+import { motion } from "framer-motion";
+import MagicBento, { BentoCardProps } from "./MagicBento";
+import { techIcons } from "./TechIcons";
+
+type SkillCategory = {
+  category: string;
+  skills: string[];
+};
+
 export default function TechStack() {
-  const skills = [
-    { name: "React", level: "Expert" },
-    { name: "Next.js", level: "Advanced" },
-    { name: "TypeScript", level: "Advanced" },
-    { name: "Tailwind CSS", level: "Expert" },
-    { name: "Node.js", level: "Intermediate" },
-    { name: "UI/UX Design", level: "Advanced" },
+  const techStack: SkillCategory[] = [
+    {
+      category: "Full-Stack Frameworks",
+      skills: [
+        "Next.js / React",
+        "Laravel / Vue",
+        "ASP.NET MVC / Angular",
+      ],
+    },
+    {
+      category: "Backend & Databases",
+      skills: [
+        "MySQL",
+        "Supabase",
+        "Firebase",
+      ],
+    },
+    {
+      category: "Mobile Development",
+      skills: [
+        "Kotlin",
+        "Flutter",
+      ],
+    },
+    {
+      category: "Styling & Media",
+      skills: [
+        "Tailwind CSS",
+        "Bootstrap",
+        "Cloudinary",
+      ],
+    },
+    {
+      category: "Tools & Environment",
+      skills: [
+        "Git & GitHub",
+        "Node.js",
+      ],
+    },
+    {
+      category: "Core Languages",
+      skills: [
+        "Java",
+        "C++",
+        "Python",
+      ],
+    },
   ];
 
+  const categoryCards: BentoCardProps[] = techStack.map((group) => ({
+    title: group.category,
+    color: '#0a0a0a',
+    description: (
+      <ul className="space-y-4 mt-2 flex-1 w-full">
+        {group.skills.map((skill, skillIdx) => (
+          <li key={skillIdx} className="flex items-center text-zinc-300 font-medium group/item cursor-default w-full">
+            <span className="w-5 h-5 mr-3 text-zinc-500 group-hover/item:text-[#b90000] transition-colors flex items-center justify-center">
+              {techIcons[skill] || <span className="text-xs">▹</span>}
+            </span>
+            <span className="group-hover/item:text-white transition-colors">{skill}</span>
+          </li>
+        ))}
+      </ul>
+    ),
+    textAutoHide: false,
+  }));
+
   return (
-    <section id="tech" className="py-32 px-6 bg-zinc-50 dark:bg-black relative overflow-hidden">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 -mt-20 -mr-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 -mb-20 -ml-20 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
-      
-      <div className="max-w-4xl mx-auto relative z-10">
-        <div className="mb-16 text-center md:text-left">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Tech Stack</h2>
-          <p className="text-zinc-600 dark:text-zinc-400 max-w-2xl text-lg">
-            The tools and technologies I use to build high-performance, scalable web applications.
+    <section id="tech" className="py-24 px-6 bg-zinc-950/30">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-12 text-center">
+          <h2 className="text-[#b90000] font-bold tracking-widest uppercase text-sm mb-4">
+            Technical Arsenal
+          </h2>
+          <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
+            Technologies & Tools
+          </h1>
+          <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
+            A comprehensive overview of my proficiency across various technologies
+            and frameworks.
           </p>
         </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {skills.map((skill, index) => (
-            <div 
-              key={index} 
-              className="group p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1"
-            >
-              <h3 className="font-semibold text-lg mb-1">{skill.name}</h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-blue-500 transition-colors">
-                {skill.level}
-              </p>
-            </div>
-          ))}
-        </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="w-full flex justify-center"
+        >
+          <MagicBento 
+            cards={categoryCards} 
+            spotlightRadius={200} 
+            enableTilt={true} 
+            glowColor="185, 0, 0"
+            enableBorderGlow={true}
+          />
+        </motion.div>
       </div>
     </section>
   );

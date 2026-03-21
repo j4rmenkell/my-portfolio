@@ -1,14 +1,14 @@
+import HomeSection from "../components/HomeSection";
 import AboutSection from "../components/AboutSection";
-import TechStack from "../components/TechStack";
-import ProjectShowcase from "../components/ProjectShowcase";
+import Portfolio from "../components/Portfolio";
 import ContactSection from "../components/ContactSection";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col w-full">
+    <main className="flex flex-col min-h-screen">
+      <HomeSection />
       <AboutSection />
-      <TechStack />
-      <ProjectShowcase />
+      <Portfolio />
       <ContactSection />
     </main>
   );
