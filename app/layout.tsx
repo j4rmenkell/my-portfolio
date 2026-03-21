@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import LiquidEther from "../components/LiquidEther";
@@ -14,8 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const taskor = localFont({
+  src: "../public/fonts/TaskorDemoRegular-9M55L.ttf",
+  variable: "--font-taskor",
+});
+
 export const metadata: Metadata = {
-  title: "Portfolio",
+  title: "Johann's Portfolio",
   description: "My personal developer portfolio",
 };
 
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`scroll-smooth ${geistSans.variable} ${geistMono.variable} ${taskor.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#050505] text-white">
         <div className="fixed inset-0 -z-10 w-full h-full opacity-80 mix-blend-screen pointer-events-none">

@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ShinyText from "./ShinyText";
 import StarBorder from "./StarBorder";
+import ScrollReveal from "./ScrollReveal";
+import AnimatedContent from "./AnimatedContent";
 
 export default function AboutSection() {
   return (
@@ -9,27 +11,29 @@ export default function AboutSection() {
         
         {/* Left: Image Holder */}
         <div className="w-full md:w-1/2 flex justify-center">
-          <StarBorder
-            as="div"
-            color="#b90000"
-            speed="12s"
-            thickness={2}
-            className="w-72 h-72 md:w-96 md:h-96 rounded-[3rem] shadow-[0_0_40px_rgba(185,0,0,0.2)] hover:shadow-[0_0_60px_rgba(185,0,0,0.4)] transition-shadow group"
-          >
-            {/* INSTRUCTIONS: Replace the div below with your actual image component */}
-            <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
-              <span className="text-zinc-600 font-mono text-sm tracking-widest">[ Profile Image ]</span>
-            </div>
-            
-            {/* Example Usage for next/image:
-            <Image 
-              src="/your-photo.jpg" 
-              alt="Profile Picture" 
-              fill 
-              className="object-cover transition-transform duration-500 group-hover:scale-110" 
-            /> 
-            */}
-          </StarBorder>
+          <AnimatedContent duration={1.5} scale={2} delay={0.5} distance={120}>
+            <StarBorder
+              as="div"
+              color="#b90000"
+              speed="12s"
+              thickness={2}
+              className="w-72 h-72 md:w-96 md:h-96 rounded-[3rem] shadow-[0_0_40px_rgba(185,0,0,0.2)] hover:shadow-[0_0_60px_rgba(185,0,0,0.4)] transition-shadow group"
+            >
+              {/* INSTRUCTIONS: Replace the div below with your actual image component */}
+              <div className="absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
+                <span className="text-zinc-600 font-mono text-sm tracking-widest">[ Profile Image ]</span>
+              </div>
+              
+              {/* Example Usage for next/image:
+              <Image 
+                src="/your-photo.jpg" 
+                alt="Profile Picture" 
+                fill 
+                className="object-cover transition-transform duration-500 group-hover:scale-110" 
+              /> 
+              */}
+            </StarBorder>
+          </AnimatedContent>
         </div>
 
         {/* Right: Text & Socials */}
@@ -49,11 +53,21 @@ export default function AboutSection() {
           </h1>
           
           <div className="space-y-4 text-zinc-300 text-lg leading-relaxed mb-10">
-            <p>
-              A graduating Information Technology student at the University of Santo Tomas. My technical focus includes web, software, and mobile development, fueled by a passion for building applications and turning ideas into reality.            </p>
-            <p>
-              Although I am still mastering the full stack, I am an adaptable developer skilled in frontends, databases, and APIs. Through core Cisco networking and cybersecurity coursework, I understand how to secure web applications. I enter the professional world with optimism and humility, eager to learn, adapt, and contribute to building robust digital solutions with a strong team.
-            </p>
+            <ScrollReveal
+              baseOpacity={0}
+              enableBlur={true}
+              baseRotation={5}
+              blurStrength={10}
+              containerClassName="w-full"
+              textClassName="text-zinc-300 text-lg leading-relaxed font-normal whitespace-pre-line"
+              scrub={false}
+              stagger={0.02}
+              duration={0.8}
+            >
+              {`A graduating Information Technology student at the University of Santo Tomas. My technical focus includes web, software, and mobile development, fueled by a passion for building applications and turning ideas into reality.
+
+Although I am still mastering the full stack, I am an adaptable developer skilled in frontends, databases, and APIs. Through core Cisco networking and cybersecurity coursework, I understand how to secure web applications. I enter the professional world with optimism and humility, eager to learn, adapt, and contribute to building robust digital solutions with a strong team.`}
+            </ScrollReveal>
           </div>
 
           {/* Social Links */}

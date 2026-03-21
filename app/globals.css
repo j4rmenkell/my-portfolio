@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.font-taskor {
+  font-family: var(--font-taskor), sans-serif !important;
+}
+
 :root {
   --background: #050505;
   --foreground: #e4e4e7;

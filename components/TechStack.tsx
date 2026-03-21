@@ -81,15 +81,11 @@ export default function TechStack() {
     <section id="tech" className="py-24 px-6 bg-zinc-950/30">
       <div className="max-w-6xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-[#b90000] font-bold tracking-widest uppercase text-sm mb-4">
-            Technical Arsenal
-          </h2>
           <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
             Technologies & Tools
           </h1>
           <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
-            A comprehensive overview of my proficiency across various technologies
-            and frameworks.
+            An overview of the technologies I've worked with throughout my journey.
           </p>
         </div>
 

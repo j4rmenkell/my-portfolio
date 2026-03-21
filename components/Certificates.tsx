@@ -9,10 +9,9 @@ export default function Certificates() {
     <section id="certificates" className="py-32 px-6 bg-zinc-950/30">
       <div className="max-w-5xl mx-auto">
         <div className="mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">Certifications</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">Professional Training</h2>
           <p className="text-zinc-400 max-w-2xl text-lg">
-            Professional accreditations verifying my expertise in modern development and cloud architecture.
-          </p>
+            Foundational Cisco coursework verifying my knowledge of routing, security, and the underlying infrastructure that powers modern web applications.          </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
