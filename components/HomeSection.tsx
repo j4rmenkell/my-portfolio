@@ -3,7 +3,7 @@ import AnimatedSplitText from "./SplitText";
 
 export default function HomeSection() {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-6 relative">
+    <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 relative">
       <div className="max-w-5xl mx-auto flex flex-col items-center text-center w-full z-10">
         <h2 className="font-semibold tracking-widest uppercase text-sm md:text-base mb-6">
           <GradientText colors={["#ff0000", "#850000"]} animationSpeed={10} showBorder={false}>
@@ -12,7 +12,7 @@ export default function HomeSection() {
           </GradientText>
         </h2>
         <h1 
-          className="font-taskor text-6xl md:text-8xl lg:text-[8rem]  tracking-tight text-white mb-6 drop-shadow-2xl leading-none"
+          className="font-taskor text-4xl sm:text-6xl md:text-8xl lg:text-[8rem] tracking-tight text-white mb-4 sm:mb-6 drop-shadow-2xl leading-none"
         >
           <AnimatedSplitText text="JOHANN " delay={80} showCallback={false} />
           <br className="md:hidden" />

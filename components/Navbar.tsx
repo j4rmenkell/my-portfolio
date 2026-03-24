@@ -58,8 +58,8 @@ export default function Navbar() {
           glowRadius={25}
           animated={true}
         >
-          <div className="px-8 h-14 flex items-center justify-center">
-            <ul className="flex items-center gap-8 text-sm font-medium text-zinc-300">
+          <div className="px-4 sm:px-8 h-12 sm:h-14 flex items-center justify-center">
+            <ul className="flex items-center gap-4 sm:gap-8 text-xs sm:text-sm font-medium text-zinc-300">
               {navLinks.map((link) => (
                 <li key={link.name}>
                   <Link 
