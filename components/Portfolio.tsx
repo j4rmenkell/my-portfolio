@@ -7,7 +7,7 @@ export default function Portfolio() {
     <div id="portfolio" className="w-full flex flex-col relative">
       <TechStack />
       <ProjectShowcase />
-      <Certificates />
+      
     </div>
   );
 }
